@@ -1,0 +1,338 @@
+/* default body style */
+body {
+	line-height: 30px;
+	min-width: 320px;
+
+	@include media('<tablet') {
+		@include font-size(15px, 26px);
+	}
+}
+
+/* default page links */
+a {
+	transition: color 0.4s ease, background 0.4s ease, opacity 0.4s ease;
+}
+
+/* main container styles */
+#wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+/* form styles */
+.form-control {
+	@include font-size(18px, 22px);
+	padding: 10px 26px;
+	border-radius: 21px;
+	color: $tundora;
+	height: 42px;
+	&:focus{
+		color: $tundora;
+		box-shadow: none;
+	}
+	@include placeholder {
+		color: $tundora;
+	}
+}
+
+/* btn styles */
+.btn-primary {
+	@include font-size(18px, 22px);
+	background: $mantis;
+	border-radius: 21px;
+	display: block;
+	color: $white;
+	font-weight: 700;
+	padding: 10px 15px;
+	text-align: center;
+	box-shadow: none !important;
+	border: none;
+	width: 100%;
+}
+
+/* top section styles */
+.top-section {
+	position: relative;
+	height: 100vh;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	min-height: 768px;
+
+	@include media('<tablet') {
+		min-height: 700px;
+	}
+
+	&:before {
+		@include position-zero;
+		//background: rgba($black, 0.7);
+		content: '';
+		z-index: 1;
+		background: linear-gradient(rgba($black, 0.7), rgba($black, 0.7)),url(../images/img1.png) no-repeat;
+		background-size: cover;
+		background-position: 50% 50%
+	}
+
+	.bg-stretch {
+		@include position-zero;
+		background-size: cover;
+		filter: blur(7px);
+		background-position: 50% 50%;
+	}
+}
+
+/* scroll down styles */
+.scroll-down {
+	position: absolute;
+	left: 50%;
+	bottom: 30px;
+	background: url(../images/ico-arrow.png) no-repeat;
+	background-size: cover;
+	width: 44px;
+	height: 24px;
+	transform: translateX(-50%);
+	z-index: 5;
+}
+
+.login-form {
+	position: relative;
+	overflow: hidden;
+}
+
+/* login styles */
+.login-box {
+	@include font-size(18px, 22px);
+	background: linear-gradient(45deg, rgba(22,22,22,1) 100%,rgba(0,0,0,1) 0%);
+	position: relative;
+	width: 430px;
+	border-radius: 23px;
+	padding: 61px 76px;
+	color: $white;
+	z-index: 1;
+	margin: 75px 0 0;
+	overflow: hidden;
+
+	@include media('<phone') {
+		padding: 40px 20px;
+		border-radius: 12px;
+		width: 92%;
+	}
+
+	&:after {
+		background: url(../images/bg-login.png) no-repeat;
+		content: '';
+		width: 332px;
+		height: 356px;
+		position: absolute;
+		z-index: -1;
+		right: -16px;
+		top: -71px;
+	}
+	
+	h1 {
+		text-align: center;
+		color: $white;
+		font-weight: 300;
+		margin: 0 0 54px;
+
+		@include media('<phone') {
+			margin: 0 0 25px;
+		}
+	}
+
+	.form-group {
+		position: relative;
+		margin: 0 0 26px;
+	}
+
+	.link {
+		display: block;
+		font-weight: 300;
+		position: relative;
+		margin: 0 -22px 8px 6px;
+
+		@include media('<phone') {
+			font-size: 14px;
+			margin: 0 0 8px;
+		}
+
+		a {
+			color: $white;
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		
+	}
+}
+
+/* main informative part styles */
+#main {
+	position: relative;
+}
+
+.section-wrap {
+	position: relative;
+}
+
+/* info area styles */
+.info-area {
+	padding: 178px 0 138px;
+
+	@include media('<desktop') {
+		padding: 60px 0 30px;
+	}
+
+	.row {
+		@include media('<desktop') {
+			align-items: center;
+		}
+	}
+
+	&:nth-child(odd) {
+		background: $athens-gray;
+
+		.img-area {
+			order: 2;
+
+			@include media('<tablet') {
+				order: 1;
+			}
+		}
+
+		.col-md-6 {
+			@include media('<tablet') {
+				order: 2;
+			}
+		}
+	}
+
+	.img-area {
+		@include media('<tablet') {
+			margin-bottom: 25px;
+		}
+	}
+
+	.img-holder {
+		position: relative;
+		padding: 0 40px 0 0;
+
+		@include media('<desktop') {
+			padding: 0;
+		}
+
+		img {
+			@include img-style;
+			margin: 0 auto;
+		}
+	}
+
+	.description {
+		position: relative;
+		margin: 0 0 0 -41px;
+		padding: 20px 0 0;
+
+		@include media('<desktop') {
+			margin: 0;
+			padding: 0;
+		}
+
+		h2 {
+			@include media('<tablet') {
+				margin: 0 0 12px;
+			}
+		}
+
+		p {
+			@include media('<tablet') {
+				margin: 0 0 14px;
+			}
+		}
+	}
+
+	&.card-detail {
+		padding: 189px 0 149px;
+
+		@include media('<desktop') {
+			padding: 60px 0 30px;
+		}
+
+		.description {
+			padding: 0 0 0 34px;
+			margin: 0;
+
+			@include media('<desktop') {
+				padding: 0;
+			}
+		}
+
+		.img-holder {
+			padding: 0;
+
+			@include media('<widescreen') {
+				overflow: hidden;
+			}
+
+			&:after {
+				position: absolute;
+				content: '';
+				background: url(../images/shadow.png) no-repeat;
+				width: 560px;
+				height: 28px;
+				bottom: -13px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				@include media('<widescreen') {
+					width: 100%;
+					background-size: 100% 100%;
+				}
+			}
+		}
+	}
+}
+
+/* intro styles */
+.intro-area {
+	position: relative;
+	padding: 240px 0 215px;
+	text-align: center;
+
+	@include media('<desktop') {
+		padding: 100px 0;
+	}
+
+	@include media('<tablet') {
+		padding: 30px 0;
+	}
+
+	.holder {
+		max-width: 770px;
+		margin: 0 auto;
+	}
+}
+
+/* list styles */
+.list {
+	position: relative;
+	margin: 0;
+
+	li {
+		position: relative;
+		padding: 0 0 0 8px;
+
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 14px;
+			width: 3px;
+			height: 3px;
+			border-radius: 100%;
+			content: '';
+			background: $jumbo;
+		}
+	}
+}

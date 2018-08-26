@@ -1,0 +1,89 @@
+/* footer styles */
+#footer {
+	position: relative;
+	background: $black;
+	
+	.holder {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 21px 55px 19px 15px;
+
+		@include media('<desktop') {
+			padding: 20px 0;
+		}
+
+		@include media('<tablet') {
+			display: block;
+		}
+	}
+
+	/* footer logo styles */
+	.logo {
+		position: relative;
+		margin: 0 0 0 -45px;
+
+		@include media('<widescreen') {
+			margin-left: 0;
+		}
+
+		@include media('<tablet') {
+			display: block;
+			margin: 0 auto 15px;
+		}
+	}
+}
+
+/* footer info styles */
+.footer-info {
+	@include font-size(14px, 18px);
+	display: flex;
+	flex-wrap: wrap;
+	color: $white;
+	padding: 6px 0 0;
+	margin: 0;
+
+	@include media('<tablet') {
+		display: block;
+		text-align: center;
+	}
+
+	address {
+		margin: 0;
+	}
+
+	li {
+		padding: 0 10px;
+		position: relative;
+
+		@include media('<tablet') {
+			padding: 0 0 10px;
+		}
+
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			color: $white;
+			content: '-';
+
+			@include media('<tablet') {
+				display: none;
+			}
+		}
+
+		&:first-child {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	a {
+		color: $white;
+
+		&:hover {
+			color: darken(white , 30%);
+		}
+	}
+}
